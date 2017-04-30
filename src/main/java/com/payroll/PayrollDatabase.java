@@ -42,6 +42,10 @@ public class PayrollDatabase {
 		employees.clear();
 	}
 
+	public void deleteEmployee(int empId) {
+		employees.remove(empId);
+	}
+
 	private Map<Integer, Employee> employees;
 	private static PayrollDatabase payrollDatabase;
 
