@@ -44,8 +44,7 @@ public class TestAddSalariedEmployee {
 
 		SalariedClassification sc = (SalariedClassification) (e.getPaymentClassification());
 		Assert.assertTrue(sc != null);
-		Assert.assertEquals(sc.getSalary(), 1000.00f, 0.01f);
-		Assert.assertEquals(expected, actual, delta);
+		Assert.assertEquals(sc.getSalary(), 1000.00, 0.001);
 
 		MonthlySchedule ms = (MonthlySchedule) e.getPaymentSchedule();
 		Assert.assertTrue(ms != null);
