@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class TimeCard {
 
-	public TimeCard(Date date, int hours) {
+	public TimeCard(Date date, double hours) {
 		this.date = date;
 		this.hours = hours;
 	}
@@ -17,7 +17,7 @@ public class TimeCard {
 		this.date = date;
 	}
 
-	public int getHours() {
+	public double getHours() {
 		return hours;
 	}
 
@@ -26,6 +26,6 @@ public class TimeCard {
 	}
 
 	private Date date;
-	private int hours;
+	private double hours;
 
 }
