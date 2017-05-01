@@ -8,14 +8,16 @@ import org.junit.Test;
 
 import com.payroll.PayrollDatabase;
 import com.payroll.core.Employee;
-import com.payroll.paymentclassification.HourlyClassification;
+import com.payroll.paymentclassification.CommissionedClassification;
+import com.payroll.paymentclassification.SalariedClassification;
 import com.payroll.paymentmethod.HoldMethod;
-import com.payroll.paymentschedule.WeeklySchedule;
-import com.payroll.transaction.AddHourlyEmployee;
+import com.payroll.paymentschedule.MonthlySchedule;
+import com.payroll.transaction.AddCommissionedEmployee;
+import com.payroll.transaction.AddSalariedEmployee;
 
 import junit.framework.Assert;
 
-public class TestAddHourlyEmployee {
+public class TestAddCommissionedEmployee {
 
 	@Before
 	public void setUp() throws Exception {
@@ -30,8 +32,8 @@ public class TestAddHourlyEmployee {
 		PayrollDatabase payrollDatabase = PayrollDatabase.getPayrollDatabase();
 
 		// Add Salaried Employee
-		int empId = 2;
-		AddHourlyEmployee t = new AddHourlyEmployee(empId, "Bob", "Home", 10.00f);
+		int empId = 3;
+		AddCommissionedEmployee t = new AddCommissionedEmployee(empId, "Bob", "Home", 1000.00f, 1000.00f);
 		t.Execute();
 
 		//
@@ -40,11 +42,12 @@ public class TestAddHourlyEmployee {
 		Assert.assertEquals(e.getName(), "Bob");
 		Assert.assertEquals(e.getEmail(), "Home");
 
-		HourlyClassification sc = (HourlyClassification)e.getPaymentClassification();
+		CommissionedClassification sc = (CommissionedClassification) (e.getPaymentClassification());
 		Assert.assertTrue(sc != null);
-		Assert.assertEquals(sc.getHourlyRate(), 10.00, 0.001);
+		Assert.assertEquals(sc.getSalary(), 1000.00, 0.001);
+		Assert.assertEquals(sc.getCommissionRate(), 1000.00, 0.001);
 
-		WeeklySchedule ms = (WeeklySchedule) e.getPaymentSchedule();
+		MonthlySchedule ms = (MonthlySchedule) e.getPaymentSchedule();
 		Assert.assertTrue(ms != null);
 
 		HoldMethod hm = (HoldMethod) e.getPaymentMethod();

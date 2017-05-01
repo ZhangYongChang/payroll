@@ -28,7 +28,7 @@ public class TestDeleteEmployee {
 		PayrollDatabase payrollDatabase = PayrollDatabase.getPayrollDatabase();
 
 		// Add Salaried Employee
-		int empId = 2;
+		int empId = 4;
 		AddSalariedEmployee t = new AddSalariedEmployee(empId, "Bob", "Home", 1000.00f);
 		t.Execute();
 
