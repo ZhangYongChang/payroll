@@ -19,19 +19,11 @@ public class PayrollDatabase {
 
 	private PayrollDatabase() {
 		employees = new HashMap<Integer, Employee>();
+		memberIdEmployeeMap = new HashMap<Integer, Employee>();
 	}
 
 	public Employee getEmployeeById(int empId) {
-		int mapSize = employees.size();
-		Iterator<Entry<Integer, Employee>> iter = employees.entrySet().iterator();
-		for (int i = 0; i < mapSize; ++i) {
-			Map.Entry<Integer, Employee> entry = iter.next();
-			if (entry.getKey().equals(empId)) {
-				return entry.getValue();
-			}
-		}
-
-		return null;
+		return employees.get(empId);
 	}
 
 	public void addEmployee(int empId, Employee employee) {
@@ -46,7 +38,16 @@ public class PayrollDatabase {
 		employees.remove(empId);
 	}
 
+	public Employee getUnionMember(int memberId) {
+		return memberIdEmployeeMap.get(memberId);
+	}
+
+	public void addUnionMember(int memberId, Employee employee) {
+		memberIdEmployeeMap.put(memberId, employee);
+	}
+
 	private Map<Integer, Employee> employees;
+	private Map<Integer, Employee> memberIdEmployeeMap;
 	private static PayrollDatabase payrollDatabase;
 
 }

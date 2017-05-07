@@ -1,11 +1,15 @@
 package com.payroll.core;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Employee {
 
 	public Employee(int empId, String name, String email) {
 		this.empId = empId;
 		this.name = name;
 		this.email = email;
+		this.affiliations = new LinkedList<Affiliation>();
 	}
 
 	public int getEmpId() {
@@ -32,12 +36,12 @@ public class Employee {
 		this.email = email;
 	}
 
-	public Affiliation getAffiliation() {
-		return affiliation;
+	public List<Affiliation> getAffiliations() {
+		return affiliations;
 	}
 
-	public void setAffiliation(Affiliation affiliation) {
-		this.affiliation = affiliation;
+	public void addAffiliation(Affiliation affiliation) {
+		this.affiliations.add(affiliation);
 	}
 
 	public PaymentMethod getPaymentMethod() {
@@ -67,8 +71,8 @@ public class Employee {
 	private int empId;
 	private String name;
 	private String email;
-	
-	private Affiliation affiliation;	
+
+	private List<Affiliation> affiliations;
 	private PaymentMethod paymentMethod;
 	private PaymentClassification paymentClassification;
 	private PaymentSchedule paymentSchedule;
