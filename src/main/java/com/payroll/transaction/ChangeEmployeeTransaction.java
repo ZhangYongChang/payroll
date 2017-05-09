@@ -5,7 +5,7 @@ import com.payroll.core.Employee;
 import com.payroll.core.PaymentClassification;
 import com.payroll.core.Transaction;
 
-abstract class ChangeEmployeeTransaction implements Transaction {
+public abstract class ChangeEmployeeTransaction implements Transaction {
 
 	public ChangeEmployeeTransaction(int empId) {
 		this.empId = empId;

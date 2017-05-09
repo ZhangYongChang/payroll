@@ -29,7 +29,7 @@ public class TestChangeEmailTransaction {
 		PayrollDatabase payrollDatabase = PayrollDatabase.getPayrollDatabase();
 
 		// Add Salaried Employee
-		int empId = 7;
+		int empId = 8;
 		AddHourlyEmployee t = new AddHourlyEmployee(empId, "Bill", "Home", 10.00f);
 		t.Execute();
 
