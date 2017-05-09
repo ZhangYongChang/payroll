@@ -9,7 +9,6 @@ public class Employee {
 		this.empId = empId;
 		this.name = name;
 		this.email = email;
-		this.affiliations = new LinkedList<Affiliation>();
 	}
 
 	public int getEmpId() {
@@ -36,12 +35,12 @@ public class Employee {
 		this.email = email;
 	}
 
-	public List<Affiliation> getAffiliations() {
-		return affiliations;
+	public Affiliation getAffiliation() {
+		return affiliation;
 	}
 
 	public void addAffiliation(Affiliation affiliation) {
-		this.affiliations.add(affiliation);
+		this.affiliation = affiliation;
 	}
 
 	public PaymentMethod getPaymentMethod() {
@@ -72,7 +71,7 @@ public class Employee {
 	private String name;
 	private String email;
 
-	private List<Affiliation> affiliations;
+	private Affiliation affiliation;
 	private PaymentMethod paymentMethod;
 	private PaymentClassification paymentClassification;
 	private PaymentSchedule paymentSchedule;

@@ -17,20 +17,14 @@ public class ServiceChargeTransaction implements Transaction {
 		this.memberId = memberId;
 		this.date = date;
 		this.amount = amount;
-
 	}
 
 	@Override
 	public void Execute() {
 		Employee e = PayrollDatabase.getPayrollDatabase().getUnionMember(memberId);
-		List<Affiliation> affiliations = e.getAffiliations();
-		Iterator<Affiliation> iter = affiliations.iterator();
-		while (iter.hasNext()) {
-			Affiliation affiliation = iter.next();
-			UnionAffiliation unionAffiliation = (UnionAffiliation) affiliation;
-			if (unionAffiliation != null) {
-				unionAffiliation.addServiceCharge(new ServiceCharge(amount, date));
-			}
+		UnionAffiliation affiliation = (UnionAffiliation) e.getAffiliation();
+		if (affiliation != null) {
+			affiliation.addServiceCharge(new ServiceCharge(amount, date));
 		}
 	}
 
