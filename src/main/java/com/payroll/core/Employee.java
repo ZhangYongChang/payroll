@@ -1,8 +1,5 @@
 package com.payroll.core;
 
-import java.util.LinkedList;
-import java.util.List;
-
 public class Employee {
 
 	public Employee(int empId, String name, String email) {

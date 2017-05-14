@@ -1,13 +1,9 @@
 package com.payroll.transaction;
 
 import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-
 import com.payroll.PayrollDatabase;
 import com.payroll.affiliation.ServiceCharge;
 import com.payroll.affiliation.UnionAffiliation;
-import com.payroll.core.Affiliation;
 import com.payroll.core.Employee;
 import com.payroll.core.Transaction;
 

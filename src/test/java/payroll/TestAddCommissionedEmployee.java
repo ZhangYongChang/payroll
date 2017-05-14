@@ -1,22 +1,17 @@
 package payroll;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import com.payroll.PayrollDatabase;
 import com.payroll.core.Employee;
 import com.payroll.paymentclassification.CommissionedClassification;
-import com.payroll.paymentclassification.SalariedClassification;
 import com.payroll.paymentmethod.HoldMethod;
 import com.payroll.paymentschedule.MonthlySchedule;
 import com.payroll.transaction.AddCommissionedEmployee;
-import com.payroll.transaction.AddSalariedEmployee;
-
 import junit.framework.Assert;
 
+@SuppressWarnings("deprecation")
 public class TestAddCommissionedEmployee {
 
 	@Before

@@ -1,18 +1,15 @@
 package payroll;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import com.payroll.PayrollDatabase;
 import com.payroll.core.Employee;
 import com.payroll.transaction.AddHourlyEmployee;
 import com.payroll.transaction.ChangeNameTransaction;
-
 import junit.framework.Assert;
 
+@SuppressWarnings("deprecation")
 public class TestChangeNameTransaction {
 
 	@Before

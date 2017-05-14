@@ -2,7 +2,6 @@ package com.payroll.transaction;
 
 import com.payroll.PayrollDatabase;
 import com.payroll.core.Employee;
-import com.payroll.core.PaymentClassification;
 import com.payroll.core.Transaction;
 
 public abstract class ChangeEmployeeTransaction implements Transaction {

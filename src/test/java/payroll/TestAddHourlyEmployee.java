@@ -1,20 +1,17 @@
 package payroll;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import com.payroll.PayrollDatabase;
 import com.payroll.core.Employee;
 import com.payroll.paymentclassification.HourlyClassification;
 import com.payroll.paymentmethod.HoldMethod;
 import com.payroll.paymentschedule.WeeklySchedule;
 import com.payroll.transaction.AddHourlyEmployee;
-
 import junit.framework.Assert;
 
+@SuppressWarnings("deprecation")
 public class TestAddHourlyEmployee {
 
 	@Before

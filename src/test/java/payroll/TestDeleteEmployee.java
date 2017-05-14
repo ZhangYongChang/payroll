@@ -1,18 +1,15 @@
 package payroll;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import com.payroll.PayrollDatabase;
 import com.payroll.core.Employee;
 import com.payroll.transaction.AddSalariedEmployee;
 import com.payroll.transaction.DeleteEmployeeTransaction;
-
 import junit.framework.Assert;
 
+@SuppressWarnings("deprecation")
 public class TestDeleteEmployee {
 
 	@Before

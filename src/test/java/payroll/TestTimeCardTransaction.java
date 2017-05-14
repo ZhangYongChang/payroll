@@ -1,22 +1,18 @@
 package payroll;
 
-import static org.junit.Assert.*;
-
 import java.util.Date;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import com.payroll.PayrollDatabase;
 import com.payroll.core.Employee;
 import com.payroll.paymentclassification.HourlyClassification;
 import com.payroll.paymentclassification.TimeCard;
 import com.payroll.transaction.AddHourlyEmployee;
 import com.payroll.transaction.TimeCardTransaction;
-
 import junit.framework.Assert;
 
+@SuppressWarnings("deprecation")
 public class TestTimeCardTransaction {
 
 	@Before
